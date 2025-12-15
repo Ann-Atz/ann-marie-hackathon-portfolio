@@ -3,19 +3,19 @@
    ========================================================================== */
 
 /* Color codes used for the theme */
-$primary-color              : #00adb5;
-$dark-primary-color         : mix(#000, $primary-color, 40%);
-$darker-primary-color       : mix(#000, $primary-color, 60%);
-$light-primary-color        : mix(#000, $primary-color, 50%);
+$primary-color              : #7bd7ff;
+$dark-primary-color         : mix(#000, $primary-color, 35%);
+$darker-primary-color       : mix(#000, $primary-color, 55%);
+$light-primary-color        : mix(#fff, $primary-color, 20%);
 
-$background                 : #252a34;
-$background-light           : mix(#fff, $background, 20%);
-$background-lighter         : mix(#fff, $background, 90%);
-$text                       : #eaeaea;
-$link                       : mix($primary-color, $text, 40%);
+$background                 : #0b1220;
+$background-light           : mix(#fff, $background, 14%);
+$background-lighter         : mix(#fff, $background, 20%);
+$text                       : #e7ecf5;
+$link                       : mix($primary-color, $text, 55%);
 $link-dark                  : mix(#000, $link, 25%);
-$link-light                 : mix(#fff, $link, 25%);
-$footer                     : mix(#000, $background, 30%);
+$link-light                 : mix(#fff, $link, 15%);
+$footer                     : mix(#000, $background, 10%);
 
 /* Color codes used for the site */
 $danger-color               : #ee5f5b;
@@ -39,17 +39,17 @@ html[data-theme="dark"] {
     --global-base-color                 : #{$background};
     --global-bg-color                   : #{$background};
     --global-footer-bg-color            : #{$footer};
-    --global-border-color               : #{$light-primary-color};
-    --global-dark-border-color          : #{$background-light};
-    --global-code-background-color      : #fafafa;
-    --global-code-text-color            : #{$darker-primary-color};
+    --global-border-color               : rgba($primary-color, 0.25);
+    --global-dark-border-color          : rgba(#fff, 0.08);
+    --global-code-background-color      : #0f1b2d;
+    --global-code-text-color            : #{$text};
     --global-fig-caption-color          : #{$light-primary-color};
     --global-link-color                 : #{$link};
     --global-link-color-hover           : #{$link-dark};
     --global-link-color-visited         : #{$link-light};
     --global-masthead-link-color        : #{$text};
-    --global-masthead-link-color-hover  : #{$background-light};
+    --global-masthead-link-color-hover  : #{$light-primary-color};
     --global-text-color                 : #{$text};
     --global-text-color-light           : #{$light-primary-color};
-    --global-thead-color                : #{$background-lighter};
+    --global-thead-color                : rgba($primary-color, 0.12);
 }

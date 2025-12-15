@@ -3,10 +3,10 @@
    ========================================================================== */
 
 // Determine the expected state of the theme toggle, which can be "dark", "light", or
-// "system". Default is "system".
+// "system". Default is "system". Party mode joins the fun.
 let determineThemeSetting = () => {
   let themeSetting = localStorage.getItem("theme");
-  return (themeSetting != "dark" && themeSetting != "light" && themeSetting != "system") ? "system" : themeSetting;
+  return (themeSetting != "dark" && themeSetting != "light" && themeSetting != "system" && themeSetting != "party") ? "system" : themeSetting;
 };
 
 // Determine the computed theme, which can be "dark" or "light". If the theme setting is
@@ -32,17 +32,22 @@ let setTheme = (theme) => {
 
   if (use_theme === "dark") {
     $("html").attr("data-theme", "dark");
-    $("#theme-icon").removeClass("fa-sun").addClass("fa-moon");
+    $("#theme-icon").removeClass("fa-sun fa-music").addClass("fa-moon");
+  } else if (use_theme === "party") {
+    $("html").attr("data-theme", "party");
+    $("#theme-icon").removeClass("fa-sun fa-moon").addClass("fa-music");
   } else if (use_theme === "light") {
     $("html").removeAttr("data-theme");
-    $("#theme-icon").removeClass("fa-moon").addClass("fa-sun");
+    $("#theme-icon").removeClass("fa-moon fa-music").addClass("fa-sun");
   }
 };
 
 // Toggle the theme manually
 var toggleTheme = () => {
-  const current_theme = $("html").attr("data-theme");
-  const new_theme = current_theme === "dark" ? "light" : "dark";
+  const themeCycle = ["light", "dark", "party"];
+  const current_theme = $("html").attr("data-theme") || "light";
+  const currentIndex = themeCycle.indexOf(current_theme);
+  const new_theme = themeCycle[(currentIndex + 1) % themeCycle.length];
   localStorage.setItem("theme", new_theme);
   setTheme(new_theme);
 };
@@ -69,7 +74,8 @@ if (plotlyElements.length > 0) {
         elem.parentElement.after(chartElement);
 
         // Set the theme for the plot and render it
-        const theme = (determineComputedTheme() === "dark") ? plotlyDarkLayout : plotlyLightLayout;
+        const computed = determineComputedTheme();
+        const theme = (computed === "dark" || computed === "party") ? plotlyDarkLayout : plotlyLightLayout;
         if (jsonData.layout) {
           jsonData.layout.template = (jsonData.layout.template) ? { ...theme, ...jsonData.layout.template } : theme;
         } else {
