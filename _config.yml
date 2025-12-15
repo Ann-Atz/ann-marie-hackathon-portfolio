@@ -12,7 +12,7 @@ site_theme               : "default" # Currently available options are "default"
 title                    : "Ann-Marie Atzkern | UX Design"
 title_separator          : "-"
 name                     : &name "Ann-Marie Atzkern"
-description              : &description "Kreative Problemlöserin an der Schnittstelle von Design & Technologie."
+description              : &description "I am a UX designer with a background in computer science and design, focused on building clear, accessible, and visually expressive digital experiences."
 url                      : https://academicpages.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -23,14 +23,14 @@ repository               : "academicpages/academicpages.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.jpg"
+  avatar           : "bio-photo.jpg"
   name             : "Ann-Marie Atzkern"
   pronouns         : # example: "she/her"  
-  bio              : "Computer Science & Design student in Munich focusing on UI/UX and front-end with thoughtful, maximalist aesthetics."
+  bio              : "UX Designer with a background in Computer Science and Design, focused on clear interaction, accessibility, and expressive visual systems."
   location         : "Munich, Germany"
-  employer         : ""
+  employer         : "Technische Hochschule Ingolstadt — M.Sc. UX Design (ongoing); Hochschule München — B.Sc. Computer Science and Design"
   uri              : # URL
-  email            : "TODO: add email from portfolio"
+  email            : 
 
   # Academic websites
   academia         : # URL
