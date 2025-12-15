@@ -1,0 +1,141 @@
+/* ==========================================================================
+   ANN LIGHT THEME OVERRIDES
+   ========================================================================== */
+
+/* Palette */
+$ann-yellow: #ffbe0b;
+$ann-orange: #fb5607;
+$ann-pink: #ff006e;
+$ann-purple: #8338ec;
+$ann-blue: #3a86ff;
+
+:root:not([data-theme="dark"]) {
+  --ann-yellow: #{$ann-yellow};
+  --ann-orange: #{$ann-orange};
+  --ann-pink: #{$ann-pink};
+  --ann-purple: #{$ann-purple};
+  --ann-blue: #{$ann-blue};
+
+  --global-base-color: var(--ann-blue);
+  --global-link-color: var(--ann-purple);
+  --global-link-color-hover: var(--ann-pink);
+  --global-link-color-visited: var(--ann-orange);
+  --global-border-color: rgba($ann-blue, 0.18);
+  --global-thead-color: rgba($ann-purple, 0.16);
+  --global-code-background-color: rgba($ann-yellow, 0.2);
+  --global-footer-bg-color: rgba($ann-blue, 0.08);
+}
+
+html:not([data-theme="dark"]) {
+  body {
+    background-image:
+      radial-gradient(circle at 20% 18%, rgba($ann-yellow, 0.12), transparent 32%),
+      radial-gradient(circle at 85% 12%, rgba($ann-blue, 0.1), transparent 30%),
+      radial-gradient(circle at 50% 85%, rgba($ann-pink, 0.1), transparent 30%);
+    background-attachment: fixed;
+  }
+
+  a {
+    text-decoration-thickness: 0.12em;
+    text-underline-offset: 0.15em;
+    text-decoration-color: rgba($ann-pink, 0.45);
+    transition: color 0.15s ease, text-decoration-color 0.15s ease, box-shadow 0.2s ease;
+  }
+
+  a:hover,
+  a:focus {
+    text-decoration-color: var(--global-link-color-hover);
+    box-shadow: 0 0.15em 0.6em rgba($ann-pink, 0.2);
+  }
+
+  .masthead {
+    box-shadow: 0 6px 18px rgba($ann-blue, 0.12);
+  }
+
+  .page__inner-wrap {
+    background: rgba($ann-blue, 0.035);
+    border: 1px solid rgba($ann-purple, 0.15);
+    border-radius: 18px;
+    padding: 1.5em;
+    box-shadow: 0 12px 30px rgba($ann-purple, 0.12);
+  }
+
+  .page__content h2 {
+    border-color: rgba($ann-purple, 0.2);
+  }
+
+  blockquote {
+    background: rgba($ann-yellow, 0.18);
+    border-left-color: $ann-orange;
+    border-radius: 12px;
+  }
+
+  .page__taxonomy-item {
+    background: rgba($ann-yellow, 0.2);
+    border: none;
+    border-radius: 999px;
+    color: var(--global-text-color);
+    box-shadow: 0 8px 18px rgba($ann-orange, 0.15);
+    transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
+  }
+
+  .page__taxonomy-item:hover {
+    background: rgba($ann-pink, 0.2);
+    color: var(--global-link-color-hover);
+    box-shadow: 0 10px 24px rgba($ann-pink, 0.18);
+    transform: translateY(-1px);
+  }
+
+  .btn {
+    color: #fff !important;
+    background: linear-gradient(135deg, var(--ann-blue), var(--ann-purple));
+    border-radius: 999px;
+    box-shadow: 0 10px 22px rgba($ann-blue, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  }
+
+  .btn:hover {
+    background: linear-gradient(135deg, var(--ann-pink), var(--ann-orange));
+    box-shadow: 0 12px 26px rgba($ann-pink, 0.2);
+    transform: translateY(-1px);
+  }
+
+  .btn--inverse {
+    color: var(--global-text-color) !important;
+    background: #fff;
+    border: 2px solid rgba($ann-blue, 0.25) !important;
+    box-shadow: 0 6px 16px rgba($ann-blue, 0.12);
+  }
+
+  .btn--inverse:hover {
+    color: var(--global-link-color-hover) !important;
+    border-color: var(--global-link-color-hover) !important;
+    box-shadow: 0 8px 18px rgba($ann-pink, 0.18);
+  }
+
+  .pagination a {
+    border-radius: 999px;
+    border-color: rgba($ann-blue, 0.25);
+  }
+
+  .pagination a.current {
+    background: var(--ann-blue);
+  }
+
+  .greedy-nav {
+    border-radius: 16px;
+    box-shadow: 0 10px 24px rgba($ann-blue, 0.14);
+    border: 1px solid rgba($ann-blue, 0.15);
+  }
+
+  .greedy-nav .visible-links > li > a {
+    padding: 0.5rem 0.75rem;
+    border-radius: 12px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .greedy-nav .visible-links > li > a:hover {
+    background: rgba($ann-blue, 0.12);
+    color: var(--global-link-color-hover);
+  }
+}
